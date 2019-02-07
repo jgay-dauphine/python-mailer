@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>My Title</title>
+    </head>
+    <body>
+        <h1>Articles in your watch list</h1>
+        {% set count = namespace(i=0) %}
+        {% for symbol in symbols %}
+            <h2>{{symbol}} - {{companyName[count.i]}} - {{exchange[count.i]}}</h2>
+            <P>
+                {{summary[count.i]}}<br/><br/>
+                Lien : <a href="{{article[count.i]}}" target="_blank">{{companyName[count.i]}}</a>
+            </P>
+            {{ set count.i = count.i + 1}}
+        {% endfor %}
+    </body>
+</html>
